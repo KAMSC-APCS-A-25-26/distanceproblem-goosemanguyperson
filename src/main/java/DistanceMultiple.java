@@ -30,10 +30,32 @@
 import java.util.Scanner;
 
 
-public class DistanceMultiple {
-    public static void main(String[] args) {
+public class DistanceMultiple
+{
+    public static void main (String[] args)
+    {
+        // declare variables
+        int numRuns, x1, x2, y1, y2;
+        double distance;
+        Scanner sc = new Scanner(System.in).useDelimiter("[\\(\\),\\s\\n]+");
 
+        // prompt user for number of runs, then loop the program that many times
+        System.out.print("Input number of runs:  ");
+        numRuns = sc.nextInt();
 
+        for(int j=0;j<numRuns;j++)
+        {
+            // prompt user for two ordered pair inputs, then read them in
+            System.out.print("\nInput coordinates:  ");
+            x1 = sc.nextInt();
+            y1 = sc.nextInt();
+            x2 = sc.nextInt();
+            y2 = sc.nextInt();
+
+            // compute and display the distance between those points
+            distance = Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
+            System.out.println("Distance:  " + distance);
+        }
+        sc.close();
     }
-
 }
